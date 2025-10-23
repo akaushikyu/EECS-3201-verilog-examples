@@ -17,4 +17,8 @@ To run the verilog code examples, download [Verilator](https://www.veripool.org/
 11. [Incorrect verilog example that does not terminate](11_forever_simulation)
 12. [2x4 decoder circuit with testbench](12_2x4_decoder_with_testbench)
 13. [4-bit ripple carry adder circuit using full-adders and half-adders](13_full_adder)
-14. More to follow....
+14. [4-bit carry lookahead adder circuit](14_carry_lookahead)
+15. [4-bit magnitude comparator in behavioral modeling](15_magnitude_comparator)
+16. [3x8 decoder](16_decoder_3x8)
+17. [8x1 mux](17_mux_8x1)
+18. More to follow....
