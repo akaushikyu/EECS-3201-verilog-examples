@@ -1,4 +1,5 @@
 // circuit module that instantiates sub_circuit module
+`timescale 1ns/1ns
 module circuit (
     input [3:0] wxyz_i,
     output f

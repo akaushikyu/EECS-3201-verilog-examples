@@ -1,4 +1,5 @@
 // 4-bit comparator circuit that instantiates the full_adder circuit
+`timescale 1ns/1ns
 module comparator (
     input [3:0] inp_1,
     input [3:0] inp_2,

@@ -1,3 +1,4 @@
+`timescale 1ns/1ns
 module carry_lookahead(
     input carry_inp,
     input [3:0] p,

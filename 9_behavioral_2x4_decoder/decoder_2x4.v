@@ -2,6 +2,7 @@
 
 // Syntax: module [design name] ([port list]):
 // Description: Define the input and output interfaces of the hardware circuit
+`timescale 1ns/1ns
 module decoder_2x4 (
     // Syntax: input [width-1:0] <port name>
     input wire enable,
@@ -44,5 +45,6 @@ module decoder_2x4 (
         // wxyz_o is the concatenation of 4 individual signals: w, x, y, z
         // with w in the least significant bit and z in the most significant bit
         wxyz_o = {z, y, x, w};
+    end
 
 endmodule: decoder_2x4
