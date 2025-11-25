@@ -1,6 +1,7 @@
 // sub_circuit.v : a circuit that does f = (a + b)' . c
 // Syntax: module [design name] ([port list]):
 // Description: Define the input and output interfaces of the hardware circuit
+`timescale 1ns/1ns
 module sub_circuit (
     input wire a,
     input wire b,

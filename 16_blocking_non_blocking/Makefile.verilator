@@ -1,0 +1,41 @@
+SRCLIST = blocking_non_blocking.v 
+SRC = $(addprefix $(CL_ROOT)/, $(SRCLIST))
+VFLAGS =
+TOP = tb_top
+_CFLAGS=
+PROG=
+
+VCD ?= 0
+
+ifeq ($(VCD), 1)
+VFLAGS+= --trace
+_CFLAGS+= -DVCD -CFLAGS -DVCD_FILE=$(SIM_ROOT)/design.vcd
+endif
+
+ifneq ($(_CFLAGS), )
+CFLAGS=-CFLAGS $(_CFLAGS)
+endif
+
+# Normal tests, not c tests
+compile:
+	echo Verilator Compilation
+	mkdir -p $(SIM_DIR)
+	cd $(SIM_DIR) && verilator $(VFLAGS) \
+		$(CFLAGS) \
+		--main \
+		--build \
+		--timing \
+		-I$(CL_ROOT)/ \
+		--cc $(SRC) \
+		--top tb_top \
+		--exe $(TOP) \
+		+define+VCD_FILE_LOC=$(VCD_FILE_STR) \
+		--Mdir $(SIM_DIR) 
+	make -C $(SIM_DIR) -f V$(TOP).mk V$(TOP)
+
+run: compile
+	echo Verilator Run
+	cd $(SIM_DIR) && ./V$(TOP)
+
+clean:
+	rm -rf $(SIM_DIR)

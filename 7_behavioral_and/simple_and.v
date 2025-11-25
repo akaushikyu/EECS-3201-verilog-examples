@@ -3,6 +3,7 @@
 
 // Syntax: module [design name] ([port list]):
 // Description: Define the input and output interfaces of the hardware circuit
+`timescale 1ns/1ns
 module simple_and (
     // Syntax: input [width-1:0] <port name>
     input wire a,

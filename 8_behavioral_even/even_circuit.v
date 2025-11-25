@@ -1,14 +1,15 @@
-// simple_circuit.v -- A simple verilog file that does f(x, y, z) = \Sigma(0, 2, 4, 6)
+// even_circuit.v -- A simple verilog file that does f(x, y, z) = \Sigma(0, 2, 4, 6)
 
 // Syntax: module [design name] ([port list]):
 // Description: Define the input and output interfaces of the hardware circuit
-module simple_circuit (
+`timescale 1ns/1ns
+module even_circuit (
     // Syntax: input [width-1:0] <port name>
     input wire x,
     input wire y,
     input wire z,
     // Syntax: output [width-1:0] <port name>
-    output wire f, 
+    output wire f 
 );
 
     // Truth table
@@ -52,4 +53,4 @@ module simple_circuit (
              (x && y && ~z);
     end
 
-endmodule: simple_circuit
+endmodule: even_circuit

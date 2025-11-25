@@ -2,6 +2,7 @@
 
 // Syntax: module [design name] ([port list]):
 // Description: Define the input and output interfaces of the hardware circuit
+`timescale 1ns/1ns
 module decoder_2x4 (
     // Syntax: input [width-1:0] <port name>
     input enable,
