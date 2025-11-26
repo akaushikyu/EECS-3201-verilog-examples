@@ -15,8 +15,8 @@ wire [31:0] tb_pout_o;
 
 universal_shift_reg #(.DWIDTH(32)) driver (
     .clk(tb_clk),
-    .slin_i(0'b0),
-    .srin_i(0'b0),
+    .slin_i(1'b0),
+    .srin_i(1'b0),
     .sel(tb_sel),
     .pin_i(tb_pin_i),
     .pout_o(tb_pout_o)
