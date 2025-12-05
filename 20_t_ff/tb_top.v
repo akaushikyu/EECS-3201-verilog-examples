@@ -6,8 +6,8 @@
 module tb_top;
 
 reg tb_clk;
-reg tb_rst;
 reg tb_t;
+reg tb_rst;
 wire tb_q;
 
 t_ff dut (
@@ -37,14 +37,15 @@ end
 
 initial begin
     tb_clk = 0;
-    tb_rst = 1;
+    tb_t = 0;
+    tb_rst = 1'b1;
     forever #10 tb_clk = ~tb_clk;
 end
 
 initial begin
     $monitor("time = %0t, clk = %h, T = %h --> Q = %h", $time, tb_clk, tb_t, tb_q);
-    tb_clk = 1'b0;
     #15;
+    tb_rst = 1'b0;
     tb_t = 1'b0;
     tb_t = 1'b1;
     #48;

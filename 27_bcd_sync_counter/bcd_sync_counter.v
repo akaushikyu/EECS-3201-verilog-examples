@@ -3,7 +3,7 @@ module bcd_sync_counter (
     input clk,
     input rst,
     input cnt_enable,
-    output reg [3:0] cnt_o
+    output wire [3:0] cnt_o
 );
 
     wire nout_0;

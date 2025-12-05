@@ -1,10 +1,11 @@
 `timescale 1ns/1ns
 module jk_ff (
     input clk,
+    input rst,
     input j,
     input k,
-    output reg q,
-    output reg qb
+    output wire q,
+    output wire qb
 );
 
     wire d_in;
@@ -13,6 +14,7 @@ module jk_ff (
 
     d_ff d (
         .clk(clk),
+	.rst(rst),
         .d(d_in),
         .q(q),
         .qb(qb)

@@ -6,6 +6,7 @@
 module tb_top;
 
 reg tb_clk;
+reg tb_rst;
 reg tb_j;
 reg tb_k;
 wire tb_q;
@@ -13,6 +14,7 @@ wire tb_qb;
 
 jk_ff dut (
     .clk(tb_clk),
+    .rst(tb_rst),
     .j(tb_j),
     .k(tb_k),
     .q(tb_q),
@@ -39,16 +41,18 @@ end
 
 initial begin
     tb_clk = 0;
+    tb_rst = 1'b1;
     forever #10 tb_clk = ~tb_clk;
 end
 
 initial begin
     // A convenient printing utility that prints out the signals and the time ($time)
     $monitor("time = %0t, clk = %h, j = %h, k = %h --> q = %h, qb = %h", $time, tb_clk, tb_j, tb_k, tb_q, tb_qb);
-    tb_clk = 1'b0;
     tb_j= 1'b0;
     tb_k = 1'b1;
-    #15;
+    #15
+    tb_rst = 1'b0;
+    #30;
     tb_j = 1'b0;
     tb_k = 1'b0;
     #48;

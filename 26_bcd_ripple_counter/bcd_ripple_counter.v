@@ -14,10 +14,9 @@ module bcd_ripple_counter (
     assign j3 = cnt_o[2] && cnt_o[1];
 
     wire nclk;
-    assign nclk = ~clk;
 
     jk_ff d0 (
-        .clk(nclk),
+        .clk(clk),
         .rst(rst),
         .j(1'b1),
         .k(1'b1),
