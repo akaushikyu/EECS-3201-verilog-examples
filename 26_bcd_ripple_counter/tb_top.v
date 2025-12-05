@@ -43,8 +43,6 @@ initial begin
     tb_rst = 1;
     #5;
     tb_rst = 0;
-    #10;
-    tb_rst = 1'b1;
 
 end
 

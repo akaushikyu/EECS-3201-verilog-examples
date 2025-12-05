@@ -36,18 +36,16 @@ initial begin
 end
 
 initial begin
-    tb_clk = 0;
-    tb_rst = 1;
+    tb_clk = 1'b0;
+    tb_rst = 1'b1;
+    tb_cnt_enable = 1'b0;
     forever #10 tb_clk = ~tb_clk;
 end
 
 initial begin
-    #10;
-    tb_cnt_enable = 1'b0;
-    tb_rst = 1'b0;
-
     #40;
     tb_cnt_enable = 1'b1;
+    tb_rst = 1'b0;
 
 end
 
